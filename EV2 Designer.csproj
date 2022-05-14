@@ -3,4 +3,13 @@
     <TargetFramework>net472</TargetFramework>
     <RootNamespace>EV2Designer</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Include="examples\config.schema.json" />
+    <Content Include="examples\example.evproj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
 </Project>

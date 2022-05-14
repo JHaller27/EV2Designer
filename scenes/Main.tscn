@@ -17,6 +17,15 @@ anchor_bottom = 1.0
 [node name="FileTree" parent="Panel/HSplitContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_right = 164.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+
+[node name="TabContainer" type="TabContainer" parent="Panel/HSplitContainer"]
+margin_left = 176.0
 margin_right = 1024.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+tab_align = 0
+drag_to_rearrange_enabled = true

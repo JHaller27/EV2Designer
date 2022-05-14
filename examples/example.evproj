@@ -1,0 +1,43 @@
+{
+    "$schema": "./config.schema.json",
+    "ResourcePaths": [
+        {
+            "path": "resource1.json",
+            "name": "Resource 1"
+        },
+        {
+            "path": "resource2.json",
+            "name": "Resource 2"
+        }
+    ],
+    "RolloutPaths": [
+        {
+            "path": "rollout1.json",
+            "name": "Rollout 1"
+        },
+        {
+            "path": "rollout2.json",
+            "name": "Rollout 2"
+        }
+    ],
+    "ServiceModelPaths": [
+        {
+            "path": "serviceModel1.json",
+            "name": "Service Model 1"
+        },
+        {
+            "path": "serviceModel2.json",
+            "name": "Service Model 2"
+        }
+    ],
+    "ScopeBindingPaths": [
+        {
+            "path": "scopeBindings1.json",
+            "name": "Scope Bindings 1"
+        },
+        {
+            "path": "scopeBindings2.json",
+            "name": "Scope Bindings 2"
+        }
+    ]
+}
