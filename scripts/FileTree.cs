@@ -28,10 +28,6 @@ public class FileTree : Tree
 
 		this.RolloutSection = this.CreateItem();
 		this.RolloutSection.SetText(0, "Rollouts");
-
-		// TODO Use file dialog to load file
-		Config config = Config.LoadFromFile("examples/example.evproj");
-		this.LoadProject(config);
 	}
 
 	public void LoadProject(Config config)
