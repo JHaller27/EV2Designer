@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using EV2Designer;
 using Godot;
 
@@ -32,27 +33,17 @@ public class FileTree : Tree
 
 	public void LoadProject(Config config)
 	{
-		foreach (FileConfigItem fileItem in config.ResourcePaths)
-		{
-			TreeItem item = this.CreateItem(this.ResourcesSection);
-			item.SetText(0, fileItem.Name);
-		}
+		this.LoadFileConfigs(config.ResourcePaths, this.ResourcesSection);
+		this.LoadFileConfigs(config.ServiceModelPaths, this.ServiceModelSection);
+		this.LoadFileConfigs(config.ScopeBindingPaths, this.ScopeBindingSection);
+		this.LoadFileConfigs(config.RolloutPaths, this.RolloutSection);
+	}
 
-		foreach (FileConfigItem fileItem in config.ServiceModelPaths)
+	private void LoadFileConfigs(List<FileConfigItem> configItems, Object sectionRoot)
+	{
+		foreach (FileConfigItem fileItem in configItems)
 		{
-			TreeItem item = this.CreateItem(this.ServiceModelSection);
-			item.SetText(0, fileItem.Name);
-		}
-
-		foreach (FileConfigItem fileItem in config.ScopeBindingPaths)
-		{
-			TreeItem item = this.CreateItem(this.ScopeBindingSection);
-			item.SetText(0, fileItem.Name);
-		}
-
-		foreach (FileConfigItem fileItem in config.RolloutPaths)
-		{
-			TreeItem item = this.CreateItem(this.RolloutSection);
+			TreeItem item = this.CreateItem(sectionRoot);
 			item.SetText(0, fileItem.Name);
 		}
 	}
