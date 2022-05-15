@@ -1,5 +1,27 @@
 [gd_scene format=2]
 
-[node name="EditorBase" type="Control"]
+[node name="EditorBase" type="VBoxContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+
+[node name="FilePathContainer" type="VBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="FilePathContainer"]
+margin_right = 1024.0
+margin_bottom = 14.0
+text = "Path"
+
+[node name="LineEdit" type="LineEdit" parent="FilePathContainer"]
+margin_top = 18.0
+margin_right = 1024.0
+margin_bottom = 42.0
+placeholder_text = "File path"
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="HSeparator" type="HSeparator" parent="."]
+margin_top = 46.0
+margin_right = 1024.0
+margin_bottom = 50.0
