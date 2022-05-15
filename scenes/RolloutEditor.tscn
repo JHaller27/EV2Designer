@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/EditorBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/RolloutEditor.cs" type="Script" id=2]
+[ext_resource path="res://scenes/RolloutStep.tscn" type="PackedScene" id=3]
 
 [node name="RolloutEditor" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -17,6 +18,20 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
 scroll_offset = Vector2( -341, -280 )
+
+[node name="RolloutStep" parent="VSplitContainer/GraphEdit" index="1" instance=ExtResource( 3 )]
+margin_left = 24.0
+margin_top = 132.0
+margin_right = 424.0
+margin_bottom = 392.0
+mouse_filter = 1
+
+[node name="RolloutStep2" parent="VSplitContainer/GraphEdit" index="2" instance=ExtResource( 3 )]
+margin_left = 389.0
+margin_top = 186.0
+margin_right = 789.0
+margin_bottom = 446.0
+mouse_filter = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VSplitContainer" index="1"]
 margin_left = 859.0
@@ -37,8 +52,6 @@ margin_right = 165.0
 margin_bottom = 71.0
 
 [node name="Label" type="Label" parent="VSplitContainer/VBoxContainer/NameContainer" index="0"]
-anchor_top = 0.0238095
-anchor_bottom = 0.0238095
 margin_right = 165.0
 margin_bottom = 14.0
 text = "Name"

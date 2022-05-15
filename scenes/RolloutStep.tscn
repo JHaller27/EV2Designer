@@ -1,0 +1,142 @@
+[gd_scene format=2]
+
+[node name="RolloutStep" type="GraphNode"]
+margin_right = 400.0
+margin_bottom = 260.0
+rect_min_size = Vector2( 400, 0 )
+show_close = true
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color( 1, 1, 1, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 1, 1, 1, 1 )
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color( 1, 1, 1, 1 )
+slot/2/right_enabled = false
+slot/2/right_type = 0
+slot/2/right_color = Color( 1, 1, 1, 1 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 384.0
+margin_bottom = 24.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 16.0
+margin_top = 25.0
+margin_right = 384.0
+margin_bottom = 45.0
+alignment = 1
+
+[node name="AddDependsOnButton" type="Button" parent="HBoxContainer"]
+margin_left = 51.0
+margin_right = 180.0
+margin_bottom = 20.0
+text = "+ Add DependsOn"
+
+[node name="AddDependencyButton" type="Button" parent="HBoxContainer"]
+margin_left = 184.0
+margin_right = 317.0
+margin_bottom = 20.0
+text = "+ Add Dependency"
+
+[node name="DataContainer" type="VBoxContainer" parent="."]
+margin_left = 16.0
+margin_top = 46.0
+margin_right = 384.0
+margin_bottom = 275.0
+custom_constants/separation = 15
+
+[node name="NameContainer" type="VBoxContainer" parent="DataContainer"]
+margin_right = 368.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="DataContainer/NameContainer"]
+margin_right = 368.0
+margin_bottom = 14.0
+text = "Name"
+
+[node name="Input" type="LineEdit" parent="DataContainer/NameContainer"]
+margin_top = 18.0
+margin_right = 368.0
+margin_bottom = 42.0
+
+[node name="TargetTypeContainer" type="VBoxContainer" parent="DataContainer"]
+margin_top = 57.0
+margin_right = 368.0
+margin_bottom = 95.0
+
+[node name="Label" type="Label" parent="DataContainer/TargetTypeContainer"]
+margin_right = 368.0
+margin_bottom = 14.0
+text = "Target Type"
+
+[node name="Input" type="OptionButton" parent="DataContainer/TargetTypeContainer"]
+margin_top = 18.0
+margin_right = 368.0
+margin_bottom = 38.0
+text = "Service Resource"
+items = [ "Service Resource", null, false, 0, null, "Service Resource Group", null, false, 1, null, "Application", null, false, 2, null ]
+selected = 0
+
+[node name="TargetNameContainer" type="VBoxContainer" parent="DataContainer"]
+margin_top = 110.0
+margin_right = 368.0
+margin_bottom = 148.0
+
+[node name="Label" type="Label" parent="DataContainer/TargetNameContainer"]
+margin_right = 368.0
+margin_bottom = 14.0
+text = "Target Name"
+
+[node name="Input" type="OptionButton" parent="DataContainer/TargetNameContainer"]
+margin_top = 18.0
+margin_right = 368.0
+margin_bottom = 38.0
+selected = 0
+
+[node name="ActionsContainer" type="VBoxContainer" parent="DataContainer"]
+margin_top = 163.0
+margin_right = 368.0
+margin_bottom = 229.0
+
+[node name="Label" type="Label" parent="DataContainer/ActionsContainer"]
+margin_right = 368.0
+margin_bottom = 14.0
+text = "Actions"
+
+[node name="InputItems" type="VBoxContainer" parent="DataContainer/ActionsContainer"]
+margin_top = 18.0
+margin_right = 368.0
+margin_bottom = 66.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DataContainer/ActionsContainer/InputItems"]
+margin_right = 368.0
+margin_bottom = 24.0
+
+[node name="Input" type="LineEdit" parent="DataContainer/ActionsContainer/InputItems/HBoxContainer"]
+margin_right = 347.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "Deploy"
+
+[node name="RemoveItem" type="Button" parent="DataContainer/ActionsContainer/InputItems/HBoxContainer"]
+margin_left = 351.0
+margin_right = 368.0
+margin_bottom = 24.0
+text = "-"
+
+[node name="AddActionButton" type="Button" parent="DataContainer/ActionsContainer/InputItems"]
+margin_top = 28.0
+margin_right = 368.0
+margin_bottom = 48.0
+text = "Add action"
