@@ -34,10 +34,10 @@ public class RolloutEditor : Control
 
 		public MetadataHandler(Node root)
 		{
-			Node metadataRoot = root.GetNode("VSplitContainer").GetNode("VBoxContainer");
+			Node metadataRoot = root.GetNode("VSplitContainer/VBoxContainer");
 
-			this.ServiceModelOption = metadataRoot.GetNode("ServiceModelContainer").GetNode<OptionButton>("Input");
-			this.ScopeBindingsOption = metadataRoot.GetNode("ScopeBindingsContainer").GetNode<OptionButton>("Input");
+			this.ServiceModelOption = metadataRoot.GetNode<OptionButton>("ServiceModelContainer/Input");
+			this.ScopeBindingsOption = metadataRoot.GetNode<OptionButton>("ScopeBindingsContainer/Input");
 		}
 
 		public void AddServiceModel(string name, string path) => AddOptionItem(this.ServiceModelOption, name, path);

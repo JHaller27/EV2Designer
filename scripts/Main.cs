@@ -14,8 +14,8 @@ public class Main : Control
 		// TODO Use file dialog to load file
 		Config config = Config.LoadFromFile("examples/example.evproj");
 
-		this.FileTree = this.GetNode("Panel").GetNode("HSplitContainer").GetNode<FileTree>("FileTree");
-		this.RolloutEditor = this.GetNode("Panel").GetNode("HSplitContainer").GetNode("TabContainer").GetNode<RolloutEditor>("RolloutEditor");
+		this.FileTree = this.GetNode<FileTree>("Panel/HSplitContainer/FileTree");
+		this.RolloutEditor = this.GetNode<RolloutEditor>("Panel/HSplitContainer/TabContainer/RolloutEditor");
 
 		this.FileTree.LoadProject(config);
 		this.RolloutEditor.LoadConfig(config, config.RolloutPaths[0]);

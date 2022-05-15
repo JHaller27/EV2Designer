@@ -1,13 +1,118 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene format=2]
 
-[ext_resource path="res://resources/simple-9patch.svg" type="Texture" id=1]
-
-[node name="NinePatchRect" type="NinePatchRect"]
+[node name="RolloutStepEditor" type="VBoxContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 1 )
-region_rect = Rect2( 8, 8, 240, 240 )
-patch_margin_left = 40
-patch_margin_top = 40
-patch_margin_right = 40
-patch_margin_bottom = 40
+
+[node name="NameContainer" type="VBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="NameContainer"]
+margin_right = 1024.0
+margin_bottom = 14.0
+text = "Name"
+
+[node name="Input" type="LineEdit" parent="NameContainer"]
+margin_top = 18.0
+margin_right = 1024.0
+margin_bottom = 42.0
+
+[node name="TargetTypeContainer" type="VBoxContainer" parent="."]
+margin_top = 46.0
+margin_right = 1024.0
+margin_bottom = 84.0
+
+[node name="Label" type="Label" parent="TargetTypeContainer"]
+margin_right = 1024.0
+margin_bottom = 14.0
+text = "Target Type"
+
+[node name="Input" type="OptionButton" parent="TargetTypeContainer"]
+margin_top = 18.0
+margin_right = 1024.0
+margin_bottom = 38.0
+text = "Service Resource"
+items = [ "Service Resource", null, false, 0, null, "Service Resource Group", null, false, 1, null, "Application", null, false, 2, null ]
+selected = 0
+
+[node name="TargetNameContainer" type="VBoxContainer" parent="."]
+margin_top = 88.0
+margin_right = 1024.0
+margin_bottom = 126.0
+
+[node name="Label" type="Label" parent="TargetNameContainer"]
+margin_right = 1024.0
+margin_bottom = 14.0
+text = "Target Name"
+
+[node name="Input" type="OptionButton" parent="TargetNameContainer"]
+margin_top = 18.0
+margin_right = 1024.0
+margin_bottom = 38.0
+selected = 0
+
+[node name="DependsOnContainer" type="VBoxContainer" parent="."]
+margin_top = 130.0
+margin_right = 1024.0
+margin_bottom = 192.0
+
+[node name="Label" type="Label" parent="DependsOnContainer"]
+margin_right = 1024.0
+margin_bottom = 14.0
+text = "Depends On"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DependsOnContainer"]
+margin_top = 18.0
+margin_right = 1024.0
+margin_bottom = 38.0
+
+[node name="RemoveButton" type="Button" parent="DependsOnContainer/HBoxContainer"]
+margin_right = 17.0
+margin_bottom = 20.0
+text = "-"
+
+[node name="OptionButton" type="OptionButton" parent="DependsOnContainer/HBoxContainer"]
+margin_left = 21.0
+margin_right = 1024.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="AddButton" type="Button" parent="DependsOnContainer"]
+margin_top = 42.0
+margin_right = 1024.0
+margin_bottom = 62.0
+text = "+ Add Dependency"
+
+[node name="ActionsContainer" type="VBoxContainer" parent="."]
+margin_top = 196.0
+margin_right = 1024.0
+margin_bottom = 262.0
+
+[node name="Label" type="Label" parent="ActionsContainer"]
+margin_right = 1024.0
+margin_bottom = 14.0
+text = "Actions"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ActionsContainer"]
+margin_top = 18.0
+margin_right = 1024.0
+margin_bottom = 42.0
+
+[node name="RemoveButton" type="Button" parent="ActionsContainer/HBoxContainer"]
+margin_right = 17.0
+margin_bottom = 24.0
+text = "-"
+
+[node name="OptionButton" type="LineEdit" parent="ActionsContainer/HBoxContainer"]
+margin_left = 21.0
+margin_right = 1024.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "Deploy"
+
+[node name="AddButton" type="Button" parent="ActionsContainer"]
+margin_top = 46.0
+margin_right = 1024.0
+margin_bottom = 66.0
+text = "+ Add Action"
